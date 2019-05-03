@@ -1,0 +1,18 @@
+<h1>
+  {{title}}
+</h1>
+Title:
+<input type="text" [(ngModel)]="vegetacion" (keyUp)="testKeyUp()" />
+<app-park *ngIf='vegetacion != "Mix"' testingInput="Park input" [the_vegetation]='vegetacion' (gameEnded)='reactToTheEvent($event)'>
+
+</app-park>
+<hr>
+<mat-radio-group class="tp-radio-group" [(ngModel)]="vegetacion">
+  <mat-radio-button class="tp-radio-button" *ngFor="let type of vegetationTypes" [value]="type">
+    {{type}}
+  </mat-radio-button>
+</mat-radio-group>
+<div class="tp-selected-value">
+  Selected Vegetation: {{vegetacion}}
+</div>
+<hr>

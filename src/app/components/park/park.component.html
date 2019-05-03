@@ -1,0 +1,31 @@
+<h1>
+  {{testingInput}}
+</h1>
+Input Vegetation
+<br>
+{{vegetation}}
+<br> <br>
+<button (click)="ChangeOpen()">
+  My button
+</button>
+
+<button (click)="EmittEvent()">
+  Emitir evento desde Parque
+</button>
+
+<div *ngIf="show">
+  <ul *ngFor="let pepe of array">
+    <li>
+      {{pepe}}
+    </li>
+  </ul>
+</div>
+<hr>
+Name:
+<input type="text" [(ngModel)]='name' value='my name' />
+<hr>
+Meters (m2):
+<input type="number" [(ngModel)]='meters' value='my meters' />
+<hr>
+Open:
+<input type="checkbox" [(ngModel)]="open">
