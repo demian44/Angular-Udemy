@@ -3,3 +3,7 @@
     margin: 1% 0 1% 0;
     border: 1px solid rgb(212, 212, 212);    
 }
+
+.navbar-nav .activeLink{
+    border-bottom: 2px solid orange;
+}
