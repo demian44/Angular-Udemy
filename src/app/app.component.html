@@ -1,12 +1,53 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<!-- <app-store></app-store> -->
-<h1>
-    {{title}}
-</h1>
-<a [routerLink]="['./home']">Home</a>
-<a [routerLink]="['./animals']">Animals</a>
-<a [routerLink]="['./keepers']">Keepers</a>
-<a [routerLink]="['./store']">Store</a>
-<a [routerLink]="['./contact']">Contact</a>
-<hr>
+<div class="navigation">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light myStyle">
+        <a class="navbar-brand" style="color:rgb(77, 77, 77)" [routerLink]="['./home']">
+            {{title}}
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="nav navbar-nav mr-auto">
+                <li>
+                    <a class="nav-link" [routerLink]="['./home']">
+                        <span class="fa fa-home"></span>
+                        Home
+                    </a></li>
+                <li>
+                    <a class="nav-link" [routerLink]="['./animals']">
+                        <span class="fa fa-star"></span>
+                        Animals
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link" [routerLink]="['./keepers']">
+                        <span class="fa fa-user"></span>
+                        Keepers
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link" [routerLink]="['./store']">
+                        <span class="fa fa-gift"></span>
+                        Store
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link" [routerLink]="['./contact']">
+                        <span class="fa fa-comment"></span>
+                        Contact
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<span *ngIf="contactEmail">
+    {{contactEmail}}
+    <button (click)="deleteEmail()">
+        Delete Email
+    </button>
+</span>
+
 <router-outlet></router-outlet>
