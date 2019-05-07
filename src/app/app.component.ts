@@ -14,7 +14,6 @@ export class AppComponent implements OnInit, DoCheck {
     let age = 45;
     let name = 'demian';
     var pepe = {age,name};
-
   }
 
   ngDoCheck(): void {
