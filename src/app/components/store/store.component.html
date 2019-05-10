@@ -1,18 +1,39 @@
-<h1>
-  {{title}}
-</h1>
-Title:
-<input type="text" [(ngModel)]="vegetacion" (keyUp)="testKeyUp()" />
-<app-park *ngIf='vegetacion != "Mix"' testingInput="Park input" [the_vegetation]='vegetacion' (gameEnded)='reactToTheEvent($event)'>
+<div>
+  <h2>
+    Use JQuery inside Angular
+  </h2>
+  <button id='btnJq'>
+    Show information
+  </button>
+  <p id='textJq' class="alert alert-warning">
+    In old times, I was an ugly person because I really wanted to eat human meat.
+  </p>
+  <div id='caja' style='width:150px; height:50px; border:1px solid black; margin-top: 15px'>
+    In old times, I was an ugly person because I really wanted to eat human meat.
+  </div>
 
-</app-park>
-<hr>
-<mat-radio-group class="tp-radio-group" [(ngModel)]="vegetacion">
-  <mat-radio-button class="tp-radio-button" *ngFor="let type of vegetationTypes" [value]="type">
-    {{type}}
-  </mat-radio-button>
-</mat-radio-group>
-<div class="tp-selected-value">
-  Selected Vegetation: {{vegetacion}}
+  <hr>
+  <a class='btn btn-primary' (click)="changeActive()" [@marcar]='active'>my button </a>
+  <hr>
+
+  Editor
+  <h2>
+    {{title}}
+  </h2>
+  Title:
+  <input type="text" [(ngModel)]="vegetacion" (keyUp)="testKeyUp()" />
+  <app-park *ngIf='vegetacion != "Mix"' testingInput="Park input" [the_vegetation]='vegetacion'
+    (gameEnded)='reactToTheEvent($event)'>
+
+  </app-park>
+  <hr>
+  <mat-radio-group class="tp-radio-group" [(ngModel)]="vegetacion">
+    <mat-radio-button class="tp-radio-button" *ngFor="let type of vegetationTypes" [value]="type">
+      {{type}}
+    </mat-radio-button>
+  </mat-radio-group>
+  <div class="tp-selected-value">
+    Selected Vegetation: {{vegetacion}}
+  </div>
+  <hr>
 </div>
-<hr>

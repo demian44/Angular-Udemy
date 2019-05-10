@@ -11,7 +11,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="nav navbar-nav mr-auto">
                 <li>
-                    <a class="nav-link" [routerLink]="['./home']"  [routerLinkActive]="['activeLink']">
+                    <a class="nav-link" [routerLink]="['./home']" [routerLinkActive]="['activeLink']">
                         <span class="fa fa-home"></span>
                         Home
                     </a></li>
@@ -49,5 +49,12 @@
         Delete Email
     </button>
 </span>
-
-<router-outlet></router-outlet>
+<button class="btn btn-success-light button-transition" (click)="goToKeepers()">
+    Keepers
+</button>
+<button class="btn btn-primary button-transition" (click)="goToContact()">
+    Contact
+</button>
+<div [@routeAnimations]="prepareRoute(outlet)">
+    <router-outlet #outlet="outlet"></router-outlet>
+</div>
