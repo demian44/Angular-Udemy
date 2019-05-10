@@ -5,14 +5,45 @@ import { StoreComponent } from './components/store/store.component';
 import { HomeComponent } from './components/home/home.component';
 import { AnimalsComponent } from './components/animals/animals.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { KeepersComponent } from './components/keepers/keepers.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: '', redirectTo: 'store', pathMatch: 'full' },
-  { path: 'store', component: StoreComponent },
-  { path: 'animals', component: AnimalsComponent },
-  { path: 'contact', component: ContactComponent },
-  { path: '**', component: HomeComponent },
+  {
+    path: '',
+    component: HomeComponent,
+    data: { animation: 'homePage' }
+  },
+  {
+    path: '',
+    redirectTo: 'store',
+    pathMatch: 'full',
+    data: { animation: 'FilterPage' }
+  },
+  {
+    path: 'store',
+    component: StoreComponent,
+    data: { animation: 'storePage' }
+  },
+  {
+    path: 'animals',
+    component: AnimalsComponent,
+    data: { animation: 'animalsPage' }
+  },
+  {
+    path: 'keepers',
+    component: KeepersComponent,
+    data: { animation: 'keepersPage' }
+  },
+  {
+    path: 'contact',
+    component: ContactComponent,
+    data: { animation: 'contactPage' }
+  },
+  {
+    path: '**',
+    component: HomeComponent,
+    data: { animation: 'FilterPage' }
+  },
 ];
 
 @NgModule({
